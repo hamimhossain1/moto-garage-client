@@ -4,7 +4,7 @@ import navlogo from '../../../Assets/logo/nav-logo.png'
 
 const Navbar = () => {
     return (
-        <div className='bg-red-300  z-20 w-full '>
+        <div className='bg-lime-400  z-20 w-full sticky top-0'>
             <div className="navbar w-11/12 p-5 mx-auto">
                 <div className="navbar-start ">
                     <div className="dropdown">
@@ -52,7 +52,7 @@ const Navbar = () => {
                         {/* <button className="btn glass text-red-600"><Link>Logout</Link></button> */}
                         {/* : */}
                         {/* <Link to='/login' className="mr-7">Login  </Link> */}
-                        <button className="btn glass text-green-600  hover:bg-sky-100"><Link to= '/login'>Login</Link></button>
+                        <button className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Login</Link></button>
                 </div>
             </div>
         </div>
