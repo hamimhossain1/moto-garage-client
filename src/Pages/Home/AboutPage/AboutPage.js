@@ -7,7 +7,7 @@ const AboutPage = () => {
             
 
             <div className="hero  bg-base-200">
-                <div className="hero-content flex-col md:flex-row-reverse">
+                <div className="hero-content flex-col justify-around md:flex-row-reverse">
                     <img src={AboutImg} className=" rounded-lg hidden md:block shadow-2xl w-2/4" alt=''/>
                     <div>
                     <h1 className='text-center  md:text-left text-3xl font-bold text-blue-500'>About Our Company</h1>
