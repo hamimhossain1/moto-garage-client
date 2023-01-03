@@ -4,7 +4,7 @@ const Blog = () => {
     return (
         <div className='mt-12 mb-10'>
             <h1 className='text-center mb-8 text-3xl uppercase font-bold text-base-300'>Blog Section</h1>
-            <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-red-100 shadow-xl mx-auto mb-8">
+            <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-base-200 shadow-xl mx-auto mb-8">
                 <div className="card-body">
                     <h2 className="card-title">1. What are the different ways to manage a state in a React application?</h2>
                     <p><span className='font-bold'>Ans: </span>
@@ -49,7 +49,7 @@ const Blog = () => {
                         There are undoubtedly more pieces of state that we could identify, but these are the major categories worth focusing on for most applications you build.</p>
                 </div>
             </div>
-            <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-red-100 shadow-xl mx-auto mb-8">
+            <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-base-200 shadow-xl mx-auto mb-8">
                 <div className="card-body">
                     <h2 className="card-title">2. How does prototypical inheritance work?</h2>
                     <p><span className='font-bold'>Ans: </span>
@@ -64,7 +64,7 @@ const Blog = () => {
                         # All the JavaScript objects inherit properties and methods from a prototype (like Date objects inherit properties from Date.prototype and so on).</p>
                 </div>
             </div>
-            <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-red-100 shadow-xl mx-auto mb-8">
+            <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-base-200 shadow-xl mx-auto mb-8">
                 <div className="card-body">
                     <h2 className="card-title">3. What is a unit test? Why should we write unit tests?</h2>
                     <p><span className='font-bold'>Ans: Unit Testing</span>  is a type of software testing where individual units or components of a software are tested. The purpose is to validate that each unit of the software code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness. A unit may be an individual function, method, procedure, module, or object.
@@ -84,7 +84,7 @@ const Blog = () => {
                     </p>
                 </div>
             </div>
-            <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-red-100 shadow-xl mx-auto mb-8">
+            <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-base-200 shadow-xl mx-auto mb-8">
                 <div className="card-body">
                     <h2 className="card-title">4. React vs. Angular vs. Vue?</h2>
                     <p><span className='font-bold'>Ans:</span> Since 59% of the world’s population is online, you must be aware that the world is adapting to the latest technologies being invented. Web Development is one of them which has now become the trend and will be forever. Let’s also know that there are more than 1 billion websites and those are created by none other than the tech giants – Web Developers. <br></br><br></br>

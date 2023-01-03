@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     return (
-        <div className='w-11/12 md:w-10/12 lg:w-5/12 mx-auto'>
+        <div className='w-11/12 md:w-10/12 lg:w-5/12 mx-auto '>
             <h1 className='text-center mt-10 mb-4 uppercase font-bold text-3xl text-base-300'>Register</h1>
 
 

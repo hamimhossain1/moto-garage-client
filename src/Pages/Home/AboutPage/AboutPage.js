@@ -3,7 +3,9 @@ import AboutImg from '../../../Assets/images/about-img/about-img.jpg'
 
 const AboutPage = () => {
     return (
-        <div>
+        <div className='mt-12'>
+            <h1 className='uppercase text-3xl font-bold text-center mt-10 mb-8'>About Us</h1>
+
             
 
             <div className="hero  bg-base-200">

@@ -5,7 +5,7 @@ import Customer3 from '../../../Assets/images/customer-img/cus3.jpg'
 import Comma from '../../../Assets/images/customer-img/comma.png'
 const CustomerFeedback = () => {
     return (
-        <div className='w-9/12 mx-auto'>
+        <div className='w-9/12 mx-auto mb-8'>
             <h1 className='uppercase text-3xl font-bold text-center mt-10 mb-10'>Customer Feedback</h1>
 
             <div className='grid md:grid-cols-3 gap-20'>
