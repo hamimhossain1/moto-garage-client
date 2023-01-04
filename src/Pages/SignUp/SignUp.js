@@ -1,9 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     return (
         <div className='w-11/12 md:w-10/12 lg:w-5/12 mx-auto '>
+
+        {/* making dynamic title by react helmet */}
+        <Helmet>
+            <title>Moto Garage/sign-up</title>
+        </Helmet>
+
             <h1 className='text-center mt-10 mb-4 uppercase font-bold text-3xl text-base-300'>Register</h1>
 
 
@@ -35,9 +42,9 @@ const SignUp = () => {
                     <div class="flex items-center h-5">
                         <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
                     </div>
-                    <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
+                    <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="/" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
                 </div>
-                <button type="submit" class="text-white btn-warning text-black uppercase hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                <button type="submit" class="text-white btn-warning  uppercase hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
 
                 <div className="flex flex-col w-full border-opacity-50 my-10">
                     <div className="divider">OR REGISTER WITH SOCIAL ACCOUNT</div>

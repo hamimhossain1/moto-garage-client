@@ -15,15 +15,15 @@ const CustomerFeedback = () => {
                     <h3 className='text-1xl font-bold text-center'>- Robert Patinson</h3>
                 </div>
                 <div>
-                    <img className='h-28 mx-auto rounded-full w-28' src={Customer2} alt="" />
-                <p className='text-center'><img className='w-8 h-6' src={Comma} alt="" /> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quisquam autem corrupti molestias repellat quibusdam vel consequatur maiores iure voluptatibus.</p>
-                    <h3 className='text-1xl font-bold text-center'>- Elon Musk</h3>
-
-                </div>
-                <div>
                     <img className='h-28 w-28 mx-auto rounded-full' src={Customer3} alt="" />
                 <p className='text-center'> <img className='w-8 h-6' src={Comma} alt="" />Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quisquam autem corrupti molestias repellat quibusdam vel consequatur maiores iure voluptatibus.</p>
                     <h3 className='text-1xl font-bold text-center'>- Bill Gates</h3>
+
+                </div>
+                <div>
+                    <img className='h-28 mx-auto rounded-full w-28' src={Customer2} alt="" />
+                <p className='text-center'><img className='w-8 h-6' src={Comma} alt="" /> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quisquam autem corrupti molestias repellat quibusdam vel consequatur maiores iure voluptatibus.</p>
+                    <h3 className='text-1xl font-bold text-center'>- Elon Musk</h3>
 
                 </div>
             </div>
