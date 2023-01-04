@@ -1,10 +1,24 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import navlogo from '../../../Assets/logo/nav-logo.png'
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
+
+    // --logOut method applied here---//
+    const handleLogout = () => {
+        logOut()
+        .then(result => {
+            toast.success('Logout succeed')
+        })
+        .catch(error => {
+            toast.error('error here:', error)
+        })
+
+    }
+
     return (
         <div className='bg-lime-400  z-20 w-full sticky top-0'>
             <div className="navbar w-11/12 p-5 mx-auto">
@@ -50,9 +64,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <img className='mr-3 w-10 hidden md:block rounded-full' src={user.photoURL} alt="" />
-                        <p className='hidden md:block mr-12 font-bold'>{user.email}</p>
-                        <button className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Login</Link></button>
+                    <img className='mr-3 w-10 hidden md:block rounded-full' src={user?.photoURL} alt="" />
+                        <p className='hidden md:block mr-12 font-bold'>{user?.email}</p>
+
+                        {user?.uid ?
+                            <button onClick={handleLogout} className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Logout</Link></button>
+                            : 
+                        <button onClick={handleLogout} className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Login</Link></button>
+                        }
                 </div>
             </div>
         </div>
