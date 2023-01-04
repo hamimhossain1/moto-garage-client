@@ -1,9 +1,17 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
         <div className='w-11/12 md:w-10/12 lg:w-5/12 mx-auto'>
+
+             {/* making dynamic title by react helmet */}
+      <Helmet>
+            <title>Moto Garage/Login</title>
+        </Helmet>
+
+
             <h1 className='text-center mt-10 mb-4 uppercase font-bold text-3xl text-base-300'>Login</h1>
 
 

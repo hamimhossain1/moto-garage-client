@@ -3,9 +3,16 @@ import Customer1 from '../../../Assets/images/customer-img/cus1.jpg'
 import Customer2 from '../../../Assets/images/customer-img/cus2.jpg'
 import Customer3 from '../../../Assets/images/customer-img/cus3.jpg'
 import Comma from '../../../Assets/images/customer-img/comma.png'
+import { Helmet } from 'react-helmet';
 const CustomerFeedback = () => {
     return (
         <div className='w-9/12 mx-auto mb-8'>
+
+            {/* making dynamic title by react helmet */}
+      <Helmet>
+            <title>Moto Garage/Customer Feedback</title>
+        </Helmet>
+
             <h1 className='uppercase text-3xl font-bold text-center mt-10 mb-10'>Customer Feedback</h1>
 
             <div className='grid md:grid-cols-3 gap-20'>

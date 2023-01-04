@@ -11,7 +11,7 @@ const Banner = () => {
                         <h1 className="mb-5 text-5xl text-stone-300 font-bold uppercase">Born to ride</h1>
                         <h1 className="mb-5 text-7xl text-lime-300 font-bold uppercase">Ride to live</h1>
                         <p className='uppercase mb-5'>Being a biker is more than riding a bike. You feel it in your heart and in your soul</p>
-                        
+
                         <button className="btn btn-warning hover:bg-green-300">Get Buy Now</button>
                     </div>
                 </div>

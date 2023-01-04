@@ -1,9 +1,17 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import bgImage from '../../Assets/images/bg-Image/error-bg.jpg'
 const ErrorPage = () => {
     return (
         <div>
+
+
+             {/* making dynamic title by react helmet */}
+      <Helmet>
+            <title>Moto Garage/Error</title>
+        </Helmet>
+
             <div className="hero min-h-screen" style={{ backgroundImage: `url(${bgImage})` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">

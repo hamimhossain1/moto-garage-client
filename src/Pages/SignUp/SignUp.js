@@ -1,21 +1,53 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
+    const { createUser, profileUpdate} = useContext(AuthContext);
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photoURL = form.photoURL.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            toast.success('Sign up successful.....!')
+            profileUpdate(name, photoURL)
+            .then( () => {
+                toast.success('User name updated')
+            })
+            .catch(error => {
+                toast.error(error.massage)
+            })
+        })
+        .catch(error => console.log('error:', error))
+
+        console.log(name, email, photoURL, password)
+    }
+
+
+
     return (
         <div className='w-11/12 md:w-10/12 lg:w-5/12 mx-auto '>
 
         {/* making dynamic title by react helmet */}
         <Helmet>
-            <title>Moto Garage/sign-up</title>
+            <title>Moto Garage/Sign-up</title>
         </Helmet>
 
             <h1 className='text-center mt-10 mb-4 uppercase font-bold text-3xl text-base-300'>Register</h1>
 
 
 
-            <form className='mb-10'>
+            <form onSubmit={handleSubmit} className='mb-10'>
                 <div className='mb-6'>
                     <label for="full_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full name</label>
                     <input name='name' type="text" id="full_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Hamim Hossain" required />
@@ -44,7 +76,7 @@ const SignUp = () => {
                     </div>
                     <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="/" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
                 </div>
-                <button type="submit" class="text-white btn-warning  uppercase hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                <button  type="submit" class="text-white btn-warning  uppercase hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
 
                 <div className="flex flex-col w-full border-opacity-50 my-10">
                     <div className="divider">OR REGISTER WITH SOCIAL ACCOUNT</div>

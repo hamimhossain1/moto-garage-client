@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import AboutPage from '../AboutPage/AboutPage';
 import Banner from '../Banner/Banner';
@@ -7,9 +8,15 @@ import ContractPage from '../ContractPage/ContractPage';
 import CustomerFeedback from '../CustomerFeedback/CustomerFeedback';
 
 const Home = () => {
-    const {name} = useContext(AuthContext)
+    const { name } = useContext(AuthContext)
     return (
         <div>
+
+            {/* making dynamic title by react helmet */}
+            {/* <Helmet>
+                <title>Moto Garage/Home...........</title>
+            </Helmet> */}
+
             <Banner></Banner>
             <AboutPage></AboutPage>
             <BestProducts></BestProducts>

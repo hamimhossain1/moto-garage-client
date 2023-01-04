@@ -1,8 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Blog = () => {
     return (
         <div className='mt-12 mb-10'>
+
+             {/* making dynamic title by react helmet */}
+      <Helmet>
+            <title>Moto Garage/Blog</title>
+        </Helmet>
+
+
             <h1 className='text-center mb-8 text-3xl uppercase font-bold text-base-300'>Blog Section</h1>
             <div className="card w-11/12 md:w-11/12 lg:w-5/12 bg-base-200 shadow-xl mx-auto mb-8">
                 <div className="card-body">

@@ -1,9 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import ContractImage from '../../../Assets/images/contract-image/contract-img.jpg'
 
 const ContractPage = () => {
   return (
     <div className='mt-12'>
+
+      {/* making dynamic title by react helmet */}
+      <Helmet>
+            <title>Moto Garage/Contract</title>
+        </Helmet>
+
       <div className="hero " style={{ backgroundImage: `url(${ContractImage})` }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
