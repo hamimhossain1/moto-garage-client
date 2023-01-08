@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
     const { createUser, profileUpdate, googleSignIn} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -20,6 +23,9 @@ const SignUp = () => {
             const user = result.user;
             console.log(user);
             toast.success('Sign up successful.....!')
+            navigate(from, {replace: true})
+              
+            //user profile //
             profileUpdate(name, photoURL)
             .then( () => {
                 toast.success('User name updated')

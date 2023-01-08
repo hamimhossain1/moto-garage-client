@@ -70,7 +70,7 @@ const Navbar = () => {
                         {user?.uid ?
                             <button onClick={handleLogout} className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Logout</Link></button>
                             : 
-                        <button onClick={handleLogout} className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Login</Link></button>
+                        <button className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Login</Link></button>
                         }
                 </div>
             </div>

@@ -1,10 +1,7 @@
 import React from 'react';
 
 const CategoryHome = ({category}) => {
-
-    console.log(category)
-
-
+    // console.log(category)
     return (
                 <div className="hero p-2 " style={{ backgroundImage: `url("${category.image}")` }}>
                     <div className="hero-overlay  bg-opacity-60"></div>

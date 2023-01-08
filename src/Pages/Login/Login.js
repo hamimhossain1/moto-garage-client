@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Login = () => {
-    const {signIn, googleSignIn} = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSignIn = (event) => {
         event.preventDefault()
@@ -13,34 +16,35 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         signIn(email, password)
-        .then( result => {
-            toast.success('Login successfully...!!!')
-            console.log(result.user);
-        })
-        .catch(error => {
-            toast.error(error.massage)
-        })
+            .then(result => {
+                toast.success('Login successfully...!!!')
+                // console.log(result.user);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                toast.error(error.massage)
+            })
     }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-        .then( (result) => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch( (error) => {
-            toast.error(error.massage);
-        })
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => {
+                toast.error(error.massage);
+            })
     }
 
 
     return (
         <div className='w-11/12 md:w-10/12 lg:w-5/12 mx-auto'>
 
-             {/* making dynamic title by react helmet */}
-      <Helmet>
-            <title>Moto Garage/Login</title>
-        </Helmet>
+            {/* making dynamic title by react helmet */}
+            <Helmet>
+                <title>Moto Garage/Login</title>
+            </Helmet>
 
 
             <h1 className='text-center mt-10 mb-4 uppercase font-bold text-3xl text-base-300'>Login</h1>
@@ -68,7 +72,7 @@ const Login = () => {
                     <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                 </div>
                 <div className='flex justify-around'>
-                    <button   type="submit" class="text-black btn-warning mr-2 block  hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">LOGIN NOW</button>
+                    <button type="submit" class="text-black btn-warning mr-2 block  hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">LOGIN NOW</button>
                     <Link to='/signup'><button type="submit" class="text-white block bg-red-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">REGISTER</button></Link>
                 </div>
 
