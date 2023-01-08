@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CategoryHome = ({category}) => {
     // console.log(category)
@@ -8,7 +9,7 @@ const CategoryHome = ({category}) => {
                     <div className="hero-content text-center text-neutral-content">
                         <div className="">
                             <h1 className="mb-5 uppercase text-5xl font-bold">{category.name}</h1>
-                            <button className="btn btn-warning">Check out</button>
+                            <Link to='/categoryProducts'><button className="btn btn-warning">Check out</button></Link>
                         </div>
                     </div>
                 </div>

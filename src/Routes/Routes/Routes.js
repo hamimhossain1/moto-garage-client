@@ -9,6 +9,9 @@ import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
 import CustomerFeedback from "../../Pages/Home/CustomerFeedback/CustomerFeedback";
 import BestProducts from "../../Pages/Home/BestProducts/BestProducts";
+import CategoryProducts from "../../Pages/Home/CategoryProducts/CategoryProducts";
+import AddProduct from "../../Pages/AddProduct/AddProduct";
+import MyProducts from "../../Pages/MyProducts/MyProducts";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +59,19 @@ const router = createBrowserRouter([
                 path: '/bestProducts',
                 element: <BestProducts></BestProducts>,
             },
+            {
+                path: '/categoryProducts',
+                element: <CategoryProducts></CategoryProducts>,
+                loader: () => fetch(`http://localhost:5000/categoryProducts`)
+            },
+            {
+                path: '/addProduct',
+                element: <AddProduct></AddProduct>,
+            },
+            {
+                path: '/myProduct',
+                element: <MyProducts></MyProducts>,
+            }
         ]
 
     },

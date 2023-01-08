@@ -1,37 +1,34 @@
 [
     {
-      "id": "63b813bc3b72cc94fec96721",
       "image": "https://ibb.co/tbCtk4z",
       "name": "BMW",
       "category": "BMW",
       "location": "Dhaka",
-      "resalePrice": "50000",
-      "originalPrice": "100000",
+      "resalePrice": "100000",
+      "originalPrice": "200000",
       "yearOfUse": "5 years",
       "postTime": "3.1.2023",
       "sellerName": "Hamim Hossain"
     },
     {
-      "id": "63b813bc0fb25f952a4cbc44",
       "image": "https://ibb.co/KXVHnDr",
       "name": "harley davidson",
       "category": "harley davidson",
       "location": "Khulna",
-      "resalePrice": "60000",
-      "originalPrice": "200000",
+      "resalePrice": "120000",
+      "originalPrice": "300000",
       "yearOfUse": "10 years",
       "postTime": "2.1.2023",
       "sellerName": "Rony Hossain"
     },
     {
-      "id": "63b813bc47b4a930f9e56ea5",
       "image": "https://ibb.co/3mDKCjf",
       "name": "Dirt Bikes",
       "category": "Dirt Bikes",
       "location": "Chattagram",
-      "resalePrice": "70000",
-      "originalPrice": "300000",
-      "yearOfUse": "15 years",
+      "resalePrice": "110000",
+      "originalPrice": "250000",
+      "yearOfUse": "7 years",
       "postTime": "1.1.2023",
       "sellerName": "Asgar Hossain"
     }
