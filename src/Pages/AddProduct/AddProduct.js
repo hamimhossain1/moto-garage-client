@@ -1,8 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import addProductImage from '../../Assets/images/add-product-image/addProductImg.png'
 
 const AddProduct = () => {
+    // const [product, setProduct] = useState();
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value;
+        const price = form.price.value;
+        const number = form.number.value;
+        const location = form.location.value;
+        const category = form.category.value;
+        const purchase = form.purchase.value;
+        const condition = form.condition.value;
+        const description = form.description.value;
+
+        console.log(name, photoURL, price, number, location,  category, purchase, condition, description)
+
+        const product = {
+            name,
+            image: photoURL,
+            price,
+            number,
+            location,
+            category,
+            purchase,
+            condition,
+            description
+        }
+        
+        fetch('http://localhost:5000/products', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+        .then(res => res.json())
+        .then(data => {
+            // setProduct(data)
+            console.log(data)
+        })
+
+    }
+    
     return (
         <div className='mt-8 mb-20'>
 
@@ -15,7 +59,8 @@ const AddProduct = () => {
             <h3 className='text-base-300 uppercase text-2xl font-bold text-center mb-4'>Add Your Product</h3>
             <img className='w-32 mx-auto mb-4' src={addProductImage} alt="" />
             <div className="card w-10/12 lg:w-5/12 bg-gray-200 shadow-xl p-5 mx-auto">
-                <form className='w-8/12 mx-auto my-10'>
+
+                <form onSubmit={handleSubmit} className='w-8/12 mx-auto my-10'>
 
                     <div class="mb-6">
                         <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product name</label>
@@ -57,9 +102,9 @@ const AddProduct = () => {
 
                         <select id="condition" name="condition" className="select w-full max-w-xs">
                             <option disabled selected>What is your product condition?</option>
-                            <option>Excellent</option>
-                            <option>Good</option>
-                            <option>Fair</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
                         </select>
                     </div>
 
@@ -70,7 +115,7 @@ const AddProduct = () => {
                         <textarea type="text" id="description" name="description" className="textarea textarea-bordered w-full" placeholder="Product description"></textarea>
                     </div>
 
-                    <button className="btn btn-warning w-full">Submit</button>
+                    <input className='btn btn-warning block mx-auto' type="submit" value="SUBMIT" />                    
                 </form>
             </div>
         </div>

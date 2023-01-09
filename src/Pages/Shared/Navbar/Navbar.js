@@ -5,17 +5,17 @@ import navlogo from '../../../Assets/logo/nav-logo.png'
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Navbar = () => {
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     // --logOut method applied here---//
     const handleLogout = () => {
         logOut()
-        .then(result => {
-            toast.success('Logout succeed')
-        })
-        .catch(error => {
-            toast.error('error here:', error)
-        })
+            .then(result => {
+                toast.success('Logout succeed')
+            })
+            .catch(error => {
+                toast.error('error here:', error)
+            })
 
     }
 
@@ -32,20 +32,21 @@ const Navbar = () => {
                             <li><Link to='/allServices'>CATEGORY</Link></li>
                             <li><Link to='/addProduct'>Add Product</Link></li>
                             <li><Link to='/myProduct'>My Product</Link></li>
+                            <li><Link to='/dashboard'>DASHBOARD</Link></li>
 
-                            
+
                             <>
 
-                            {/* <li><Link to='/addService'>Add Service</Link></li> */}
+                                {/* <li><Link to='/addService'>Add Service</Link></li> */}
                             </>
-                          
+
 
                             <li><Link to='/blog'>BLOG</Link></li>
 
 
                         </ul>
                     </div>
-                    <Link to='/home' className="btn btn-ghost normal-case text-xl"><img src={navlogo} className='w-16'  alt="navbar logo" /></Link>
+                    <Link to='/home' className="btn btn-ghost normal-case text-xl"><img src={navlogo} className='w-16' alt="navbar logo" /></Link>
                     <h3 className='text-1xl md:text-2xl font-bold text-base-
                     300'>MOTO GARAGE</h3>
                 </div>
@@ -54,12 +55,14 @@ const Navbar = () => {
                         <li><Link to='/home'>HOME</Link></li>
                         <li><Link to='/allServices'>CATEGORY</Link></li>
                         <li><Link to='/addProduct'>Add Product</Link></li>
-                            <li><Link to='/myProduct'>My Product</Link></li>
+                        <li><Link to='/myProduct'>My Product</Link></li>
+                        <li><Link to='/dashboard'>DASHBOARD</Link></li>
 
-                    <>
-                        {/* <li><Link to='/addService'>Add Service</Link></li> */}
 
-                    </>
+                        <>
+                            {/* <li><Link to='/addService'>Add Service</Link></li> */}
+
+                        </>
 
 
                         <li><Link to='/blog'>BLOG</Link></li>
@@ -69,15 +72,19 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <img className='mr-3 w-10 hidden md:block rounded-full' src={user?.photoURL} alt="" />
-                        <p className='hidden md:block mr-12 font-bold'>{user?.email}</p>
+                    <p className='hidden md:block mr-12 font-bold'>{user?.email}</p>
 
-                        {user?.uid ?
-                            <button onClick={handleLogout} className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Logout</Link></button>
-                            : 
-                        <button className="btn glass text-red-800  hover:bg-sky-100"><Link to= '/login'>Login</Link></button>
-                        }
+                    {user?.uid ?
+                        <button onClick={handleLogout} className="btn glass text-red-800  hover:bg-sky-100"><Link to='/login'>Logout</Link></button>
+                        :
+                        <button className="btn glass text-red-800  hover:bg-sky-100"><Link to='/login'>Login</Link></button>
+                    }
                 </div>
             </div>
+
+            <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden  ">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </label>
         </div>
 
 

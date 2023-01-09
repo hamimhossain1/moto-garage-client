@@ -15,6 +15,7 @@ import MyProducts from "../../Pages/MyProducts/MyProducts";
 import PrivateRoutes from "../PrivateRoutes";
 import CategorySingleProduct from "../../Pages/Home/CategoryProducts/CategorySingleProduct";
 import CategoryFirstHome from "../../Pages/Home/CagegoryFirstHome/CategoryFirstHome";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -86,6 +87,17 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes><CategoryFirstHome></CategoryFirstHome></PrivateRoutes>,
                 loader: ({params}) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
             }
+        ]
+
+    },
+    {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>,
+        children:[
+            {
+                path: '/dashboard/addProduct',
+                element: <AddProduct></AddProduct>,
+            },
         ]
 
     },
