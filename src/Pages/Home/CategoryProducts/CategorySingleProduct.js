@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const CategorySingleProduct = ({product}) => {
     const {name, image} = product;
     return (
+        <>
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
             <div className="card-body">
@@ -13,10 +14,10 @@ const CategorySingleProduct = ({product}) => {
                     <button className="btn btn-primary">Buy Now</button>
 
 
-                    <Link to='/'><button>GO BACK</button></Link>
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

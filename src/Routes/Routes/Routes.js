@@ -12,6 +12,9 @@ import BestProducts from "../../Pages/Home/BestProducts/BestProducts";
 import CategoryProducts from "../../Pages/Home/CategoryProducts/CategoryProducts";
 import AddProduct from "../../Pages/AddProduct/AddProduct";
 import MyProducts from "../../Pages/MyProducts/MyProducts";
+import PrivateRoutes from "../PrivateRoutes";
+import CategorySingleProduct from "../../Pages/Home/CategoryProducts/CategorySingleProduct";
+import CategoryFirstHome from "../../Pages/Home/CagegoryFirstHome/CategoryFirstHome";
 
 const router = createBrowserRouter([
     {
@@ -60,9 +63,10 @@ const router = createBrowserRouter([
                 element: <BestProducts></BestProducts>,
             },
             {
-                path: '/categoryProducts',
+                path: '/categoryProducts/:name',
                 element: <CategoryProducts></CategoryProducts>,
-                loader: () => fetch(`http://localhost:5000/categoryProducts`)
+                // element: <PrivateRoutes><CategoryProducts></CategoryProducts></PrivateRoutes>,
+                loader: ({params}) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
             },
             {
                 path: '/addProduct',
@@ -71,6 +75,16 @@ const router = createBrowserRouter([
             {
                 path: '/myProduct',
                 element: <MyProducts></MyProducts>,
+            },
+            // {
+            //     path: '/allServices',
+            //     element: <PrivateRoutes><CategoryProducts></CategoryProducts></PrivateRoutes>,
+            //     loader: ({params}) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
+            // },
+            {
+                path: '/categoryFirstHome/:name',
+                element: <PrivateRoutes><CategoryFirstHome></CategoryFirstHome></PrivateRoutes>,
+                loader: ({params}) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
             }
         ]
 

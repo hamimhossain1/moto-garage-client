@@ -5,6 +5,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 import AboutPage from '../AboutPage/AboutPage';
 import Banner from '../Banner/Banner';
 import BestProducts from '../BestProducts/BestProducts';
+import CategoryFirstHome from '../CagegoryFirstHome/CategoryFirstHome';
 import CategoryHome from '../CategoryHome/CategoryHome';
 import ContractPage from '../ContractPage/ContractPage';
 import CustomerFeedback from '../CustomerFeedback/CustomerFeedback';
@@ -16,9 +17,10 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <CategoryFirstHome></CategoryFirstHome>
             
             {/* home page category data  */}
-            <div className=' mt-12 mb-14 w-11/12 lg:w-10/12 mx-auto'>
+            {/* <div className=' mt-12 mb-14 w-11/12 lg:w-10/12 mx-auto'>
                 <h1 className='uppercase text-3xl font-bold text-center mt-16 mb-8'>CAtegory</h1>
 
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-12'>
@@ -29,7 +31,7 @@ const Home = () => {
                         ></CategoryHome>)
                     }
                 </div>
-            </div>
+            </div> */}
 
             <AboutPage></AboutPage>
             <BestProducts></BestProducts>

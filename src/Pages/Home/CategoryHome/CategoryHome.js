@@ -9,7 +9,7 @@ const CategoryHome = ({category}) => {
                     <div className="hero-content text-center text-neutral-content">
                         <div className="">
                             <h1 className="mb-5 uppercase text-5xl font-bold">{category.name}</h1>
-                            <Link to='/categoryProducts'><button className="btn btn-warning">Check out</button></Link>
+                            <Link to={`/categoryProducts/${category.name}`}><button className="btn btn-warning">ALL PRODUCTS</button></Link>
                         </div>
                     </div>
                 </div>
