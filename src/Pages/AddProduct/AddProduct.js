@@ -11,7 +11,11 @@ const AddProduct = () => {
         const name = form.name.value;
         const photoURL = form.photoURL.value;
         const price = form.price.value;
+        const originalPrice = form.originalPrice.value;
         const number = form.number.value;
+        const sellerName = form.sellerName.value;
+        const postTime = form.postTime.value;
+        const email = form.email.value;
         const location = form.location.value;
         const category = form.category.value;
         const purchase = form.purchase.value;
@@ -24,10 +28,14 @@ const AddProduct = () => {
             name,
             image: photoURL,
             price,
+            originalPrice,
             number,
+            sellerName,
+            postTime,
+            email,
             location,
             category,
-            purchase,
+            yearOfUse: purchase,
             condition,
             description
         }
@@ -73,8 +81,13 @@ const AddProduct = () => {
                     </div>
 
                     <div class="mb-6">
-                        <label for="price" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Service Price</label>
-                        <input type="text" id="price" name="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Service price" required="" />
+                        <label for="price" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product price</label>
+                        <input type="text" id="price" name="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Current price" required="" />
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="originalPrice" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Original price</label>
+                        <input type="text" id="originalPrice" name="originalPrice" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Original price" required="" />
                     </div>
 
                     <div class="mb-6">
@@ -83,18 +96,48 @@ const AddProduct = () => {
                     </div>
 
                     <div class="mb-6">
+                        <label for="sellerName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seller name</label>
+                        <input type="text" id="sellerName" name="sellerName" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Seller name" required="" />
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="postTime" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Post time </label>
+                        <input type="text" id="postTime" name="postTime" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Time got posted (5-01-2023)" required="" />
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                        <input type="text" id="email" name="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Mobile number" required="" />
+                    </div>
+
+                    <div class="mb-6">
                         <label for="location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Location</label>
                         <input type="text" id="location" name="location" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Location" required="" />
                     </div>
 
-                    <div class="mb-6">
+                    {/* <div class="mb-6">
                         <label for="category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product Category</label>
                         <input type="text" id="category" name="category" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="bmw/ harley davidson/ dirt bikes " required="" />
+                    </div> */}
+
+
+                    <div className='mb-6'>
+                        <label for="category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product Category</label>
+
+                        <select id="category" name="category" className="select w-full max-w-xs">
+                            <option disabled selected>Choose your product...!</option>
+                            <option value="bmw">BMW</option>
+                            <option value="harley davidson">Harley Davidson</option>
+                            <option value="dirt bikes">Dirt Bikes</option>
+                        </select>
                     </div>
 
+
+
+
                     <div class="mb-6">
-                        <label for="purchase" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Years of Purchase</label>
-                        <input type="text" id="purchase" name="purchase" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Years of purchase" required="" />
+                        <label for="purchase" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Years of use</label>
+                        <input type="text" id="purchase" name="purchase" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Years of use" required="" />
                     </div>
 
                     <div className='mb-6'>

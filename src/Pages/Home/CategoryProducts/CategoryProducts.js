@@ -6,9 +6,10 @@ const CategoryProducts = () => {
     const categoryProducts = useLoaderData()
     console.log(categoryProducts)
     return (
-        <div className='w-9/12 mx-auto my-12 text-center'>
-            <h1 >This is category Products sections....!</h1>
-            <div className='grid grid-cols-3 gap-10 mt-12'>
+        <div className='w-11/12 lg:w-9/12 mx-auto my-12 text-center'>
+            <h1 className='text-center mb-8 text-2xl md:text-3xl uppercase font-bold text-base-300'>category Products section</h1>
+
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 mt-12'>
 
                 {
                     categoryProducts?.map(product => <CategorySingleProduct
