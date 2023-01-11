@@ -4,7 +4,7 @@ const SingleMyProduct = ({product}) => {
         const { name, image, price, originalPrice, location, yearOfUse, sellerName, postTime } = product;
 
     return (
-         <div className=''>
+         <div className=' gap-10'>
                 <div className="card  bg-base-300 shadow-xl">
                     <figure className="px-10 pt-10">
                         <img src={image} alt="Shoes" className="rounded-xl" />

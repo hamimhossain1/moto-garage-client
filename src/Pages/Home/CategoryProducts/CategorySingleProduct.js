@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BsCheck2Circle } from 'react-icons/bs';
 
-const CategorySingleProduct = ({ product }) => {
+const CategorySingleProduct = ({ product, setBookingProduct }) => {
     const { name, image, price, originalPrice, location, yearOfUse, sellerName, postTime } = product;
     return (
         <>
@@ -13,7 +14,15 @@ const CategorySingleProduct = ({ product }) => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
-                    <h2 className="card-title">{sellerName}</h2>
+
+                    <h2 className="card-title">
+                        {sellerName} <BsCheck2Circle className='text-green-900'></BsCheck2Circle> 
+                    
+                    <label htmlFor="booking-modal" className="btn btn-xs btn-error text-white"
+                    onClick={ ()=> setBookingProduct(product)}
+                    >Book Now</label>
+                    </h2>
+
                     <p>{location}, Bangladesh</p>
                     <p className=''><span className='font-bold'>Current price: </span> {price}</p>
                     <p className=''><span className='font-bold'>Original price: </span> {originalPrice}</p>

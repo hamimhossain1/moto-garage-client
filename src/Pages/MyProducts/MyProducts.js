@@ -1,36 +1,40 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
-import myProductImage from '../../Assets/images/my-product-img/my-product-img.png'
+import { AuthContext } from '../../Contexts/AuthProvider';
 import SingleMyProduct from './SingleMyProduct';
+// import myProductImage from '../../Assets/images/my-product-img/my-product-img.png'
+// import  { AuthContext } from '../../Contexts/AuthProvider';
+// import SingleMyProduct from './SingleMyProduct';
 
 const MyProducts = () => {
-    const products = useLoaderData()
-    // const { name, image, price, originalPrice, location, yearOfUse, sellerName, postTime } = products;
-    console.log(products)
+    const { user } = useContext(AuthContext)
+    const [myProducts, setMyProducts] = useState([])
+    console.log(myProducts)
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/myProductsList?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setMyProducts(data)
+            })
+    }, [user?.email])
 
     return (
-        <div className='w-11/12 lg:w-9/12 mx-auto mb-10'>
-            <div className='mt-8 mb-20'>
+        <div>
+            <div className='w-9/12 mx-auto mb-10 '>
+                <h1 className='text-center mt-10 mb-10 uppercase font-bold text-3xl text-base-300'>My products</h1>
+                {/* <p className='text-center'>{user.email}</p> */}
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
 
-                {/* react helmet for dynamic title  */}
-                <Helmet>
-                    <title>Moto Garage/myProduct</title>
-                </Helmet>
-
-
-                <h3 className='text-base-300 uppercase text-2xl font-bold text-center mb-4'>My Product section</h3>
-                <img className='w-32 mx-auto' src={myProductImage} alt="" />
-
-            </div>
-
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
-            {
-                products.map(product => <SingleMyProduct
-                key={product._id}
-                product={product}
-                ></SingleMyProduct>)
-            }
+                    {
+                        myProducts?.map(product => <SingleMyProduct
+                            key={product._id}
+                            product={product}
+                        ></SingleMyProduct>)
+                    }
+                </div>
             </div>
         </div>
     );

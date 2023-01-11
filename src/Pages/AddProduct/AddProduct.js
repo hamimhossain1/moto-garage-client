@@ -99,6 +99,14 @@ const AddProduct = () => {
                         <label for="sellerName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seller name</label>
                         <input type="text" id="sellerName" name="sellerName" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Seller name" required="" />
                     </div>
+                    {/* <div class="mb-6">
+                        <label for="sellerEmail" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seller email</label>
+                        <input type="text" id="sellerEmail" name="sellerEmail" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Seller email" required="" />
+                    </div> */}
+                    <div class="mb-6">
+                        <label for="sellerImage" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seller image</label>
+                        <input type="text" id="sellerImage" name="sellerImage" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Seller image" required="" />
+                    </div>
 
                     <div class="mb-6">
                         <label for="postTime" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Post time </label>
@@ -106,7 +114,7 @@ const AddProduct = () => {
                     </div>
 
                     <div class="mb-6">
-                        <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                        <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seller email</label>
                         <input type="text" id="email" name="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Mobile number" required="" />
                     </div>
 
@@ -157,6 +165,39 @@ const AddProduct = () => {
 
                         <textarea type="text" id="description" name="description" className="textarea textarea-bordered w-full" placeholder="Product description"></textarea>
                     </div>
+
+                    {/* <div className='mb-6'>
+                        <label for="sold" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product sold</label>
+                        <select id="sold" name="sold" className="select w-full max-w-xs">
+                            <option disabled selected>Is product sold?</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                    <div className='mb-6'>
+                        <label for="verified" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product verified</label>
+                        <select id="verified" name="verified" className="select w-full max-w-xs">
+                            <option disabled selected>Is product verified?</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                    <div className='mb-6'>
+                        <label for="advertised" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product advertised</label>
+                        <select id="advertised" name="advertised" className="select w-full max-w-xs">
+                            <option disabled selected>Is product advertised?</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                    <div className='mb-6'>
+                        <label for="reported" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product reported</label>
+                        <select id="reported" name="reported" className="select w-full max-w-xs">
+                            <option disabled selected>Is product reported?</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div> */}
 
                     <input className='btn btn-warning block mx-auto' type="submit" value="SUBMIT" />                    
                 </form>
