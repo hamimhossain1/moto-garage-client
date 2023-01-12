@@ -9,7 +9,7 @@
 - have registerd after login you can see category sections
 - navigation to privet route
 - email & password, google login
-- has used jwt token
+- has used react queary token
 - responsive website
 - applied dashboard
 
