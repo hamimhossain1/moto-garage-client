@@ -22,6 +22,9 @@ const DashboardLayout = () => {
                     {/* <!-- Sidebar content here --> */}
                     <Link to="/dashboard/myProduct"><li ><a>MY PRODUCTS</a></li></Link>
                     <Link to='/dashboard/addProduct'><li><a>ADD PRODUCT</a></li></Link>
+                    <Link to='/dashboard/admins'><li className='uppercase'><a>Admins</a></li></Link>
+                    <Link to='/dashboard/sellers'><li className='uppercase'><a>Sellers</a></li></Link>
+                    <Link to='/dashboard/buyers'><li className='uppercase'><a>Buyers</a></li></Link>
                     
                         
                     </ul>

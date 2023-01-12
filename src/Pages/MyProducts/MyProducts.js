@@ -22,14 +22,6 @@ const MyProducts = () => {
             })
     }, [])
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/myProductsList?email=${user?.email}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setMyProducts(data)
-    //         })
-    // }, [user?.email])
-
     const handleDelete = id => {
         const proceed = window.confirm('Do you agree ot delete?');
         console.log(proceed)

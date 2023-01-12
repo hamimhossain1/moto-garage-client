@@ -17,6 +17,9 @@ import CategorySingleProduct from "../../Pages/Home/CategoryProducts/CategorySin
 import CategoryFirstHome from "../../Pages/Home/CagegoryFirstHome/CategoryFirstHome";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import DashboardLayout from "../../Layout/DashboardLayout";
+import Admin from "../../Pages/Admin/Admin";
+import Sellers from "../../Pages/Sellers/Sellers";
+import Buyers from "../../Pages/Buyers/Buyers";
 
 const router = createBrowserRouter([
     {
@@ -119,6 +122,19 @@ const router = createBrowserRouter([
                 path: '/dashboard/addProduct',
                 element: <AddProduct></AddProduct>
             },
+            {
+                path: '/dashboard/admins',
+                element: <Admin></Admin>
+            },
+            {
+                path: '/dashboard/sellers',
+                element: <Sellers></Sellers>
+            },
+            {
+                path: '/dashboard/buyers',
+                element: <Buyers></Buyers>
+            }
+            
         ]
     },
 
