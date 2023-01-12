@@ -1,10 +1,19 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CategoryHome from '../CategoryHome/CategoryHome';
 
 const CategoryFirstHome = () => {
-    const categorys = useLoaderData()
-    console.log(categorys)
+    // const categorys = useLoaderData()
+    // console.log(categorys)
+
+    const {data:categorys = []} = useQuery({
+        queryKey: ['category'],
+        queryFn: () => fetch(`http://localhost:5000/category`)
+        .then(res => res.json())
+    })
+
+
     return (
         <div>
             {/* home page category data  */}

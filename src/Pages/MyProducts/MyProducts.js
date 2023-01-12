@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-hot-toast';
@@ -11,8 +12,7 @@ import SingleMyProduct from './SingleMyProduct';
 const MyProducts = () => {
     const { user } = useContext(AuthContext)
     const [myProducts, setMyProducts] = useState([])
-    console.log(myProducts)
-
+    // console.log(myProducts)
 
     useEffect(() => {
         fetch(`http://localhost:5000/myProducts`)
