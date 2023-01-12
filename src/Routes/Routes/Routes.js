@@ -16,12 +16,13 @@ import PrivateRoutes from "../PrivateRoutes";
 import CategorySingleProduct from "../../Pages/Home/CategoryProducts/CategorySingleProduct";
 import CategoryFirstHome from "../../Pages/Home/CagegoryFirstHome/CategoryFirstHome";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import DashboardLayout from "../../Layout/DashboardLayout";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        children:[
+        children: [
             {
                 path: '/',
                 element: <Home></Home>,
@@ -44,17 +45,17 @@ const router = createBrowserRouter([
                 path: '/signup',
                 element: <SignUp></SignUp>,
             },
-        
+
             {
                 path: '/aboutUs',
                 element: <AboutPage></AboutPage>,
             },
-        
+
             {
                 path: '/contract',
                 element: <ContractPage></ContractPage>,
             },
-        
+
             {
                 path: '/feedback',
                 element: <CustomerFeedback></CustomerFeedback>,
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
             {
                 path: '/categoryProducts/:name',
                 element: <PrivateRoutes><CategoryProducts></CategoryProducts></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
             },
             {
                 path: '/addProduct',
@@ -85,23 +86,35 @@ const router = createBrowserRouter([
             {
                 path: '/categoryFirstHome/:name',
                 element: <PrivateRoutes><CategoryFirstHome></CategoryFirstHome></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
             }
         ]
 
     },
+    // {
+    //     path: '/dashboard',
+    //     element: <Dashboard></Dashboard>,
+    //     children:[
+    //         {
+    //             path: '/dashboard/addProduct',
+    //             element: <AddProduct></AddProduct>,
+    //         },
+    //     ]
+
+    // },
+
     {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>,
-        children:[
+        element: <PrivateRoutes><DashboardLayout></DashboardLayout></PrivateRoutes>,
+        children: [
             {
-                path: '/dashboard/addProduct',
-                element: <AddProduct></AddProduct>,
-            },
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
+            }
         ]
-
     },
-    {path: '*', element: <ErrorPage></ErrorPage>}
+
+    { path: '*', element: <ErrorPage></ErrorPage> }
 ]);
 
 export default router;

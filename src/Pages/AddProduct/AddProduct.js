@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import addProductImage from '../../Assets/images/add-product-image/addProductImg.png'
 
 const AddProduct = () => {
     // const [product, setProduct] = useState();
+    const navigate = useNavigate()
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -49,6 +52,9 @@ const AddProduct = () => {
         })
         .then(res => res.json())
         .then(data => {
+            toast.success('Product add successfully.')
+            navigate('/myProduct')
+
             // setProduct(data)
             console.log(data)
         })

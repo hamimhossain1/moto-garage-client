@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const BookingModal = ({bookingProduct}) => {
@@ -25,6 +26,7 @@ const BookingModal = ({bookingProduct}) => {
         })
         .then(res => res.json())
         .then(data => {
+            toast.success('Item is booked')
             console.log(data)
         })
     }

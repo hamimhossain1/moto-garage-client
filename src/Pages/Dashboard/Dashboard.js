@@ -5,7 +5,10 @@ import Navbar from '../Shared/Navbar/Navbar';
 const Dashboard = () => {
     return (
         <div className=''>
-            <Navbar></Navbar>
+
+
+            <h2>Coming soon..............!!!!!!!!</h2>
+            {/* <Navbar></Navbar>
             <div className="drawer drawer-mobile mt-10">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
@@ -29,7 +32,7 @@ const Dashboard = () => {
                         </>
                     </ul>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
