@@ -5,9 +5,7 @@ import { toast } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import SingleMyProduct from './SingleMyProduct';
-// import myProductImage from '../../Assets/images/my-product-img/my-product-img.png'
-// import  { AuthContext } from '../../Contexts/AuthProvider';
-// import SingleMyProduct from './SingleMyProduct';
+
 
 const MyProducts = () => {
     const { user } = useContext(AuthContext)
@@ -15,7 +13,7 @@ const MyProducts = () => {
     // console.log(myProducts)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myProducts`)
+        fetch(`https://moto-garage-server.vercel.app/myProducts`)
             .then(res => res.json())
             .then(data => {
                 setMyProducts(data)
@@ -26,7 +24,7 @@ const MyProducts = () => {
         const proceed = window.confirm('Do you agree ot delete?');
         console.log(proceed)
         if (proceed) {
-            fetch(`http://localhost:5000/myProducts/${id}`, {
+            fetch(`https://moto-garage-server.vercel.app/myProducts/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

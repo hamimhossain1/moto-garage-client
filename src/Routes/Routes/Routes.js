@@ -29,12 +29,11 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch(`http://localhost:5000/category`)
+                loader: () => fetch(`https://moto-garage-server.vercel.app/category`)
             },
             {
                 path: '/home',
                 element: <Home></Home>,
-                // loader: () => fetch(`http://localhost:5000/category`)
             },
             {
                 path: '/blog',
@@ -70,41 +69,18 @@ const router = createBrowserRouter([
             {
                 path: '/categoryProducts/:name',
                 element: <PrivateRoutes><CategoryProducts></CategoryProducts></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
+                loader: ({ params }) => fetch(`https://moto-garage-server.vercel.app/categoryProducts/${params.name}`)
             },
-            // {
-            //     path: '/addProduct',
-            //     element: <AddProduct></AddProduct>,
-            // },
-            // {
-            //     path: '/myProduct',
-            //     element: <MyProducts></MyProducts>,
-            //     loader: () => fetch(`http://localhost:5000/myProducts`)
-            // },
-            // {
-            //     path: '/allServices',
-            //     element: <PrivateRoutes><CategoryProducts></CategoryProducts></PrivateRoutes>,
-            //     loader: ({params}) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
-            // },
+            
             {
                 path: '/categoryFirstHome/:name',
                 element: <PrivateRoutes><CategoryFirstHome></CategoryFirstHome></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
+                loader: ({ params }) => fetch(`https://moto-garage-server.vercel.app/categoryProducts/${params.name}`)
             }
         ]
 
     },
-    // {
-    //     path: '/dashboard',
-    //     element: <Dashboard></Dashboard>,
-    //     children:[
-    //         {
-    //             path: '/dashboard/addProduct',
-    //             element: <AddProduct></AddProduct>,
-    //         },
-    //     ]
-
-    // },
+    
 
     {
         path: '/dashboard',

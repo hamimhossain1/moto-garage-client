@@ -26,7 +26,7 @@ const Login = () => {
                 console.log(currentUser);
 
                 //--- get jwt token ---//
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://moto-garage-server.vercel.app/jwt', {
                     method: 'POST',
                     HEADERS: {
                         'content-type': 'application/json'

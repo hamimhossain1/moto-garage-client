@@ -4,12 +4,10 @@ import { useLoaderData } from 'react-router-dom';
 import CategoryHome from '../CategoryHome/CategoryHome';
 
 const CategoryFirstHome = () => {
-    // const categorys = useLoaderData()
-    // console.log(categorys)
-
+    
     const {data:categorys = []} = useQuery({
         queryKey: ['category'],
-        queryFn: () => fetch(`http://localhost:5000/category`)
+        queryFn: () => fetch(`https://moto-garage-server.vercel.app/category`)
         .then(res => res.json())
     })
 

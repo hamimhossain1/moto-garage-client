@@ -17,7 +17,7 @@ const BookingModal = ({bookingProduct}) => {
             location,
             number
         }
-        fetch('http://localhost:5000/modalData', {
+        fetch('https://moto-garage-server.vercel.app/modalData', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
