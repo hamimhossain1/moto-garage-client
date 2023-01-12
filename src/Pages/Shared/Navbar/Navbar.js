@@ -31,7 +31,7 @@ const Navbar = () => {
                             <li><Link to='/home'>HOME</Link></li>
                             {/* <li><Link to='/allServices'>CATEGORY</Link></li> */}
                             {/* <li><Link to='/addProduct'>Add Product</Link></li> */}
-                            <li><Link to='/myProduct'>MY PRODUCTS</Link></li>
+                            {/* <li><Link to='/myProduct'>MY PRODUCTS</Link></li> */}
                             <li><Link to='/dashboard'>DASHBOARD</Link></li>
 
 
@@ -55,7 +55,7 @@ const Navbar = () => {
                         <li><Link to='/home'>HOME</Link></li>
                         {/* <li><Link to='/allServices'>CATEGORY</Link></li> */}
                         {/* <li><Link to='/addProduct'>Add Product</Link></li> */}
-                        <li><Link to='/myProduct'>MY PRODUCTS</Link></li>
+                        {/* <li><Link to='/myProduct'>MY PRODUCTS</Link></li> */}
                         <li><Link to='/dashboard'>DASHBOARD</Link></li>
 
 

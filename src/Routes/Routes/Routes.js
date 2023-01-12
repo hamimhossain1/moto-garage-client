@@ -69,15 +69,15 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes><CategoryProducts></CategoryProducts></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5000/categoryProducts/${params.name}`)
             },
-            {
-                path: '/addProduct',
-                element: <AddProduct></AddProduct>,
-            },
-            {
-                path: '/myProduct',
-                element: <MyProducts></MyProducts>,
-                // loader: () => fetch(`http://localhost:5000/myProducts`)
-            },
+            // {
+            //     path: '/addProduct',
+            //     element: <AddProduct></AddProduct>,
+            // },
+            // {
+            //     path: '/myProduct',
+            //     element: <MyProducts></MyProducts>,
+            //     loader: () => fetch(`http://localhost:5000/myProducts`)
+            // },
             // {
             //     path: '/allServices',
             //     element: <PrivateRoutes><CategoryProducts></CategoryProducts></PrivateRoutes>,
@@ -108,9 +108,13 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><DashboardLayout></DashboardLayout></PrivateRoutes>,
         children: [
             {
-                path: '/dashboard',
-                element: <Dashboard></Dashboard>
-            }
+                path: '/dashboard/myProduct',
+                element: <MyProducts></MyProducts>, 
+            },
+            {
+                path: '/dashboard/addProduct',
+                element: <AddProduct></AddProduct>
+            },
         ]
     },
 
