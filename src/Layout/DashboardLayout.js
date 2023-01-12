@@ -5,11 +5,11 @@ import Navbar from '../Pages/Shared/Navbar/Navbar';
 
 const DashboardLayout = () => {
     return (
-        <div>
+        <div className=''>
             <Navbar></Navbar>
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content ">
+                <div className="drawer-content">
 
             {/* <!-- Page content here --> */}
                     <Outlet></Outlet>

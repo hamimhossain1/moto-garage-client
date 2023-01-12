@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { toast } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import SingleMyProduct from './SingleMyProduct';
@@ -14,15 +15,48 @@ const MyProducts = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myProductsList?email=${user?.email}`)
+        fetch(`http://localhost:5000/myProducts`)
             .then(res => res.json())
             .then(data => {
                 setMyProducts(data)
             })
-    }, [user?.email])
+    }, [])
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/myProductsList?email=${user?.email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setMyProducts(data)
+    //         })
+    // }, [user?.email])
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Do you agree ot delete?');
+        console.log(proceed)
+        if (proceed) {
+            fetch(`http://localhost:5000/myProducts/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount) {
+                        toast.success('Deleted successfully')
+                        const remaining = myProducts.filter(myPro => myPro._id !== id)
+                        setMyProducts(remaining);
+                    }
+                })
+        }
+    }
 
     return (
         <div>
+
+            {/* react helmet for dynamic title  */}
+            <Helmet>
+                <title>Moto Garage/myProducts</title>
+            </Helmet>
+
             <div className='w-9/12 mx-auto mb-10 '>
                 <h1 className='text-center mt-10 mb-10 uppercase font-bold text-3xl text-base-300'>My products</h1>
                 {/* <p className='text-center'>{user.email}</p> */}
@@ -32,6 +66,7 @@ const MyProducts = () => {
                         myProducts?.map(product => <SingleMyProduct
                             key={product._id}
                             product={product}
+                            handleDelete={handleDelete}
                         ></SingleMyProduct>)
                     }
                 </div>
